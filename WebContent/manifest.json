@@ -1,0 +1,41 @@
+{
+  "sap.app" : {
+    "id" : "com.emax.product",
+    "dataSources" : {
+        "emaxCust" : {
+           "uri" : "proxy/https/services.odata.org/Northwind/Northwind.svc/"
+        }
+    
+    }
+  },
+  "sap.ui5" : {
+  		"rootView" : "com.emax.product.view.RootView",
+  		"models" : {
+  		   "" : {
+  		     "dataSource" : "emaxCust"
+  		   }
+  		},
+		"routing" : {
+			"config" : {
+				 "viewType" : "XML",
+				 "controlId" : "idApp",
+				 "controlAggregation" : "pages",
+				 "routerClass" : "sap.m.routing.Router"
+			},
+			"routes" : [
+				{
+					
+				 "pattern" : "",
+				 "name" : "homePage",
+				 "viewName" : "com.emax.product.view.Page1"
+				}, 
+				{
+				 "pattern" : "topage2/{cid}", 
+				 "name" : "secondPage",
+				 "viewName" : "com.emax.product.view.Page2"				 
+				}
+			]
+		}
+  
+  }
+}

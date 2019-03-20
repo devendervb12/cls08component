@@ -1,8 +1,10 @@
 <core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
-		 xmlns:html="http://www.w3.org/1999/xhtml">
+		 xmlns:html="http://www.w3.org/1999/xhtml"
+		 controllerName="com.emax.product.controller.Page2"
+		 >
 	<Page title="Page 2">
 		<content>
-	
+	       <Button text="go to page2" press="gotoPage1"/>
 		</content>
 	</Page>
 </core:View>

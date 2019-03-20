@@ -1,4 +1,4 @@
-sap.ui.controller("view.Page1", {
+sap.ui.controller("com.emax.product.controller.Page1", {
 
 /**
 * Called when a controller is instantiated and its View controls (if available) are already created.
@@ -34,5 +34,18 @@ sap.ui.controller("view.Page1", {
 //	onExit: function() {
 //
 //	}
+	onPress : function(){
+		//go to page2
+		var oRouter = this.getOwnerComponent().getRouter();
+		oRouter.navTo("secondPage");
+	},
+	onItemSelection : function(oEvent){
+		// oEvent - press
+		//oEvent.getSource() - selected standardListItem
+		
+		var cId = oEvent.getSource().getInfo();
+		
+		this.getOwnerComponent().getRouter().navTo("secondPage", {cid : cId });
+	}
 
 });
