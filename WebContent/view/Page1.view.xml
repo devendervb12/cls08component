@@ -1,13 +1,17 @@
-<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
-		 xmlns:html="http://www.w3.org/1999/xhtml"
-		 controllerName="com.emax.product.controller.Page1">
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="com.emax.product.controller.Page1">
 	<Page title="Product List">
 		<content>
-			<List items="{/Customers}">
-			  <items>
-			     <StandardListItem title="{CompanyName}" description="{Address}" 
-			     info="{CustomerID}" type="Active" press="onItemSelection"/>
-			  </items>
+			<List items="{/Customers}" id="idList">
+				<infoToolbar>
+					<Toolbar>
+						<SearchField liveChange="onSearch" width="100%" />
+					</Toolbar>
+				</infoToolbar>
+				<items>
+					<StandardListItem title="{CompanyName}"
+						description="{Address}" info="{CustomerID}" type="Active" press="onItemSelection" />
+				</items>
 			</List>
 		</content>
 	</Page>

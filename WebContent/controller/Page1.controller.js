@@ -46,6 +46,22 @@ sap.ui.controller("com.emax.product.controller.Page1", {
 		var cId = oEvent.getSource().getInfo();
 		
 		this.getOwnerComponent().getRouter().navTo("secondPage", {cid : cId });
-	}
+	},
+
+	onSearch : function (oEvt) {
+
+		// add filter for search
+		var aFilters = [];
+		var sQuery = oEvt.getSource().getValue();
+		if (sQuery && sQuery.length > 0) {
+			var filter = new sap.ui.model.Filter("CompanyName", sap.ui.model.FilterOperator.StartsWith, sQuery);
+			aFilters.push(filter);
+		}
+
+		// update list binding
+		var list = this.byId("idList");
+		var binding = list.getBinding("items");
+		binding.filter(aFilters, "Application");
+	},
 
 });

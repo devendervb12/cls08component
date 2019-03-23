@@ -4,6 +4,7 @@
 		 >
 	<Page title="Page 2">
 		<content>
+		    <ObjectHeader title="{CustomerID}" number="{Phone}" intro="{CompanyName}"/>
 	       <Button text="go to page2" press="gotoPage1"/>
 		</content>
 	</Page>

@@ -20,19 +20,20 @@
 				 "viewType" : "XML",
 				 "controlId" : "idApp",
 				 "controlAggregation" : "pages",
-				 "routerClass" : "sap.m.routing.Router"
+				 "routerClass" : "sap.m.routing.Router",
+				 "viewPath" : "com.emax.product.view"
 			},
 			"routes" : [
 				{
 					
 				 "pattern" : "",
 				 "name" : "homePage",
-				 "viewName" : "com.emax.product.view.Page1"
+				 "viewName" : "Page1"
 				}, 
 				{
 				 "pattern" : "topage2/{cid}", 
 				 "name" : "secondPage",
-				 "viewName" : "com.emax.product.view.Page2"				 
+				 "viewName" : "Page2"				 
 				}
 			]
 		}

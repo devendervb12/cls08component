@@ -5,9 +5,19 @@ sap.ui.controller("com.emax.product.controller.Page2", {
 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
 * @memberOf view.Page2
 */
-//	onInit: function() {
-//
-//	},
+	onInit: function() {
+     
+		var oRouter = this.getOwnerComponent().getRouter();
+		
+		oRouter.getRoute("secondPage").attachPatternMatched(function(oEvent){
+			// get cid
+			var custId = oEvent.getParameters().arguments.cid;
+			
+			// Element binding
+			this.getView().bindElement("/Customers('"+custId+"')");
+			
+		}, this);// this(controller) is listening to PatternMatchedEvent
+	},
 
 /**
 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
